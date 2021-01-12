@@ -521,3 +521,14 @@ class TokenCount(Field):
 
 class Murmur3(Field):
     name = "murmur3"
+
+
+class Alias(Field):
+    name = "alias"
+    _coerce = True
+
+    def to_dict(self):
+        """Return as dict."""
+        d = super(Alias, self).to_dict()
+        d["type"] = "alias"
+        return d

@@ -36,6 +36,7 @@ from .faceted_search import (
     TermsFacet,
 )
 from .field import (
+    Alias,
     Binary,
     Boolean,
     Byte,
@@ -89,6 +90,7 @@ __version__ = VERSION
 __versionstr__ = ".".join(map(str, VERSION))
 __all__ = [
     "A",
+    "Alias",
     "AttrDict",
     "AttrList",
     "Binary",

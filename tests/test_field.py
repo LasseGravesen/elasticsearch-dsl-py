@@ -210,3 +210,10 @@ def test_object_constructor():
 
     with pytest.raises(ValidationException):
         field.Object(doc_class=Inner, dynamic=False)
+
+
+def test_alias_field_from_dict():
+    f = field.construct_field({"type": "alias", "path": "followers_count"})
+
+    assert isinstance(f, field.Alias)
+    assert {"type": "alias", "path": "followers_count"} == f.to_dict()
